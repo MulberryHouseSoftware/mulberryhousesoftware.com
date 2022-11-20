@@ -22,8 +22,14 @@ import image4 from '@/images/photos/image-4.jpg'
 import image5 from '@/images/photos/image-5.jpg'
 import logoAirbnb from '@/images/logos/airbnb.svg'
 import logoFacebook from '@/images/logos/facebook.svg'
+import logoFinancialCanvas from '@/images/logos/financial-canvas.svg'
+import logoLaravel from '@/images/logos/laravel.svg'
+import logoMirage from '@/images/logos/mirage.svg'
 import logoPlanetaria from '@/images/logos/planetaria.svg'
 import logoStarbucks from '@/images/logos/starbucks.svg'
+import logoStatamic from '@/images/logos/statamic.svg'
+import logoStrata from '@/images/logos/strata.svg'
+import logoVega from '@/images/logos/vega.svg'
 
 function MailIcon(props) {
   return (
@@ -109,12 +115,13 @@ function SocialLink({ icon: Icon, ...props }) {
 
 function Newsletter() {
   const handleSubmit = async (event) => {
+    event.preventDefault()
     const response = await fetch('/api/sendgrid', {
       body: JSON.stringify({
-        email: "john@walley.org.uk",
-        fullname: "John Walley",
-        subject: "Test",
-        message: "Thanks for getting in touch",
+        email: 'john@walley.org.uk',
+        fullname: 'John Walley',
+        subject: 'Test',
+        message: 'Thanks for getting in touch',
       }),
       headers: {
         'Content-Type': 'application/json',
@@ -309,6 +316,56 @@ export default function Home({ articles }) {
         </div>
       </Container>
       <Photos />
+      <Container className="pt-20 pb-16 text-center lg:pt-32">
+        <div className="mt-36 lg:mt-44">
+          <p className="font-display text-base text-zinc-600 dark:text-zinc-400">
+            Trusted by
+          </p>
+          <ul
+            role="list"
+            className="mt-8 flex items-center justify-center gap-x-8 sm:flex-col sm:gap-x-0 sm:gap-y-10 xl:flex-row xl:gap-x-12 xl:gap-y-0"
+          >
+            {[
+              [
+                {
+                  name: 'Financial Canvas',
+                  logo: logoFinancialCanvas,
+                  href: 'https://www.financialcanvas.co.uk/',
+                },
+                {
+                  name: 'Vega',
+                  logo: logoVega,
+                  href: 'https://vega.xyz/',
+                },
+                {
+                  name: 'Strata',
+                  logo: logoStrata,
+                  href: 'https://www.stratasecurity.co.uk/',
+                },
+              ],
+            ].map((group, groupIndex) => (
+              <li key={groupIndex}>
+                <ul
+                  role="list"
+                  className="flex flex-col items-center gap-y-8 sm:flex-row sm:gap-x-12 sm:gap-y-0"
+                >
+                  {group.map((company) => (
+                    <li key={company.name} className="flex">
+                      <a href={company.href}>
+                        <Image
+                          src={company.logo}
+                          alt={company.name}
+                          unoptimized
+                        />
+                      </a>
+                    </li>
+                  ))}
+                </ul>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </Container>
       <Container className="mt-24 md:mt-28">
         <div className="mx-auto grid max-w-xl grid-cols-1 gap-y-20 lg:max-w-none lg:grid-cols-2">
           <div className="flex flex-col gap-16">
