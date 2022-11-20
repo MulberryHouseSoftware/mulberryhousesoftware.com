@@ -1,6 +1,7 @@
 import { ArticleLayout } from '@/components/ArticleLayout'
 import Image from 'next/image'
-import designSystem from './planetaria-design-system.png'
+import poster from './poster.png'
+import subwayPoster from './subway-poster.png'
 
 export const meta = {
   author: 'John Walley',
@@ -14,11 +15,11 @@ export default (props) => <ArticleLayout meta={meta} {...props} />
 
 Every now and then I like to put together an infographic poster as quickly as I can. My latest attempt is this poster of World Marathon Courses.
 
-<Image src={designSystem} alt="" />
+<Image src={poster} alt="" />
 
 It is inspired by Neil Freeman’s [Subway systems at the same scale](http://fakeisthenewreal.org/subway/) poster; which shows 140 of the world’s metro systems side-by-side.
 
-<Image src={designSystem} alt="" />
+<Image src={subwayPoster} alt="" />
 
 Let me walk you through the process of putting it together and describe some of the decisions I had to make along the way.
 
@@ -71,4 +72,4 @@ Where the code-first approach becomes especially tedious is for tasks like layin
 
 All in all a fun exercise. My favourite part was realising I could get the maps of the course from publicly available gps data provided by runners.
 
-Download the poster.
+<a href="/infographics/World Marathon Courses.pdf" download>Download the poster</a>.
