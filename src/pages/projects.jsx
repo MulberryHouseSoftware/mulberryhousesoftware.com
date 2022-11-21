@@ -11,38 +11,71 @@ import logoPlanetaria from '@/images/logos/planetaria.svg'
 
 const projects = [
   {
-    name: 'Planetaria',
+    name: 'Pennant',
     description:
-      'Creating technology to empower civilians to explore space on their own terms.',
-    link: { href: 'http://planetaria.tech', label: 'planetaria.tech' },
+      'A React component library for visualising historical and streaming financial market data. Used by Vega,a protocol for creating and trading margined financial products on a fully decentralised network.',
+    link: { href: 'https://pennant.vega.xyz/', label: 'pennant.vega.xyz' },
     logo: logoPlanetaria,
   },
   {
-    name: 'Animaginary',
-    description:
-      'High performance web animation library, hand-written in optimized WASM.',
-    link: { href: '#', label: 'github.com' },
+    name: 'Financial Canvas',
+    description: 'Enables CIOs, financial controllers and pension fund trustees to filter and explore the latest versions of a financial model in their browsers.',
+    link: {
+      href: 'https://www.financialcanvas.co.uk/',
+      label: 'financialcanvas.co.uk',
+    },
     logo: logoAnimaginary,
   },
   {
-    name: 'HelioStream',
+    name: 'Changing Places International',
     description:
-      'Real-time video streaming library, optimized for interstellar transmission.',
-    link: { href: '#', label: 'github.com' },
+      'Over a 1/4 million people need Changing Places toilets to enable them to get out and about and enjoy the day-to-day activities many of us take for granted.',
+    link: {
+      href: 'https://app.changingplacesinternational.org/',
+      label: 'app.changingplacesinternational.org',
+    },
     logo: logoHelioStream,
   },
   {
-    name: 'cosmOS',
-    description:
-      'The operating system that powers our Planetaria space shuttles.',
-    link: { href: '#', label: 'github.com' },
+    name: 'CancerPDX',
+    description: 'Visualise cancer history in a family tree.',
+    link: { href: 'https://cancerpdx.com/', label: 'cancerpdx.com' },
     logo: logoCosmos,
   },
   {
-    name: 'OpenShuttle',
+    name: 'Nolojy',
+    description: 'Technology and product roadmaps.',
+    link: { href: 'https://nolojy.com/', label: 'nolojy.com' },
+    logo: logoOpenShuttle,
+  },
+  {
+    name: 'Cambridge Bumps',
     description:
-      'The schematics for the first rocket I designed that successfully made it to orbit.',
-    link: { href: '#', label: 'github.com' },
+      'Over one hundred years of the quirky Cambridge and Oxford rowing races visualised.',
+    link: {
+      href: 'https://www.cambridgebumps.com/',
+      label: 'cambridgebumps.com',
+    },
+    logo: logoOpenShuttle,
+  },
+  {
+    name: 'How do you stack up?',
+    description:
+      "A data-driven story of the largest women's rowing race in the world.",
+    link: {
+      href: 'https://how-do-you-stack-up.mulberryhousesoftware.com/',
+      label: 'how-do-you-stack-up.mulberryhousesoftware.com',
+    },
+    logo: logoOpenShuttle,
+  },
+  {
+    name: 'Cambridge Pub Map',
+    description:
+      "Cambridge pubs in the style of the London Underground map.",
+    link: {
+      href: 'https://www.pubmap.co.uk/',
+      label: 'pubmap.co.uk',
+    },
     logo: logoOpenShuttle,
   },
 ]
@@ -62,7 +95,7 @@ export default function Projects() {
   return (
     <>
       <Head>
-        <title>Projects - Spencer Sharp</title>
+        <title>Projects - Mulberry House Software</title>
         <meta
           name="description"
           content="Things I’ve made trying to put my dent in the universe."

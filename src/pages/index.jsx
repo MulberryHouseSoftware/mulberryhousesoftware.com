@@ -15,16 +15,17 @@ import clsx from 'clsx'
 import { formatDate } from '@/lib/formatDate'
 import { generateRssFeed } from '@/lib/generateRssFeed'
 import { getAllArticles } from '@/lib/getAllArticles'
-import image1 from '@/images/photos/image-1.jpg'
-import image2 from '@/images/photos/image-2.jpg'
-import image3 from '@/images/photos/image-3.jpg'
-import image4 from '@/images/photos/image-4.jpg'
-import image5 from '@/images/photos/image-5.jpg'
+import image1 from '@/images/photos/image-1.gif'
+import image2 from '@/images/photos/image-2.png'
+import image3 from '@/images/photos/image-3.gif'
+import image4 from '@/images/photos/image-4.png'
+import image5 from '@/images/photos/image-5.png'
 import logoAirbnb from '@/images/logos/airbnb.svg'
 import logoFacebook from '@/images/logos/facebook.svg'
 import logoFinancialCanvas from '@/images/logos/financial-canvas.svg'
 import logoLaravel from '@/images/logos/laravel.svg'
 import logoMirage from '@/images/logos/mirage.svg'
+import logoNolojy from '@/images/logos/nolojy.svg'
 import logoPlanetaria from '@/images/logos/planetaria.svg'
 import logoStarbucks from '@/images/logos/starbucks.svg'
 import logoStatamic from '@/images/logos/statamic.svg'
@@ -317,7 +318,7 @@ export default function Home({ articles }) {
       </Container>
       <Photos />
       <Container className="pt-20 pb-16 text-center lg:pt-32">
-        <div className="mt-36 lg:mt-44">
+        <div>
           <p className="font-display text-base text-zinc-600 dark:text-zinc-400">
             Trusted by
           </p>
@@ -341,6 +342,13 @@ export default function Home({ articles }) {
                   name: 'Strata',
                   logo: logoStrata,
                   href: 'https://www.stratasecurity.co.uk/',
+                },
+              ],
+              [
+                {
+                  name: 'Nolojy',
+                  logo: logoNolojy,
+                  href: 'https://nolojy.com/',
                 },
               ],
             ].map((group, groupIndex) => (

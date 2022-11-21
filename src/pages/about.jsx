@@ -61,8 +61,8 @@ export default function About() {
           </div>
           <div className="lg:order-first lg:row-span-2">
             <h1 className="text-4xl font-bold tracking-tight text-zinc-800 dark:text-zinc-100 sm:text-5xl">
-              I’m Spencer Sharp. I live in New York City, where I design the
-              future.
+              We’re Mulberry House Software. We’re based in Cambridge, UK, where we
+              visualise the future.
             </h1>
             <div className="mt-6 space-y-7 text-base text-zinc-600 dark:text-zinc-400">
               <p>
@@ -86,7 +86,7 @@ export default function About() {
                 photo back down to our family computer from space.
               </p>
               <p>
-                Today, I’m the founder of Planetaria, where we’re working on
+                Today, I’m the founder of Mulberry House Software, where we’re working on
                 civilian space suits and manned shuttle kits you can assemble at
                 home so that the next generation of kids really <em>can</em>{' '}
                 make it to orbit — from the comfort of their own backyards.
@@ -95,16 +95,16 @@ export default function About() {
           </div>
           <div className="lg:pl-20">
             <ul role="list">
-              <SocialLink href="#" icon={TwitterIcon}>
+              <SocialLink href="https://twitter.com/dowhatimean" icon={TwitterIcon}>
                 Follow on Twitter
               </SocialLink>
-              <SocialLink href="#" icon={InstagramIcon} className="mt-4">
+              <SocialLink href="https://instagram.com/remarkablecharts" icon={InstagramIcon} className="mt-4">
                 Follow on Instagram
               </SocialLink>
-              <SocialLink href="#" icon={GitHubIcon} className="mt-4">
+              <SocialLink href="https://github.com/johnwalley" icon={GitHubIcon} className="mt-4">
                 Follow on GitHub
               </SocialLink>
-              <SocialLink href="#" icon={LinkedInIcon} className="mt-4">
+              <SocialLink href="https://www.linkedin.com/company/18064811" icon={LinkedInIcon} className="mt-4">
                 Follow on LinkedIn
               </SocialLink>
               <SocialLink
@@ -112,7 +112,7 @@ export default function About() {
                 icon={MailIcon}
                 className="mt-8 border-t border-zinc-100 pt-8 dark:border-zinc-700/40"
               >
-                spencer@planetaria.tech
+                john.walley@mulberryhousesoftware.com
               </SocialLink>
             </ul>
           </div>

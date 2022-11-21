@@ -4,7 +4,7 @@ import { Card } from '@/components/Card'
 import { Section } from '@/components/Section'
 import { SimpleLayout } from '@/components/SimpleLayout'
 
-function SpeakingSection({ children, ...props }) {
+function ServicesSection({ children, ...props }) {
   return (
     <Section {...props}>
       <div className="space-y-16">{children}</div>
@@ -25,11 +25,11 @@ function Appearance({ title, description, event, cta, href }) {
   )
 }
 
-export default function Speaking() {
+export default function Services() {
   return (
     <>
       <Head>
-        <title>Speaking - Spencer Sharp</title>
+        <title>Services - Mulberry House Software</title>
         <meta
           name="description"
           content="I’ve spoken at events all around the world and been interviewed for many podcasts."
@@ -40,7 +40,7 @@ export default function Speaking() {
         intro="One of my favorite ways to share my ideas is live on stage, where there’s so much more communication bandwidth than there is in writing, and I love podcast interviews because they give me the opportunity to answer questions instead of just present my opinions."
       >
         <div className="space-y-20">
-          <SpeakingSection title="Conferences">
+          <ServicesSection title="Conferences">
             <Appearance
               href="#"
               title="In space, no one can watch you stream — until now"
@@ -55,8 +55,8 @@ export default function Speaking() {
               event="Business of Startups 2020"
               cta="Watch video"
             />
-          </SpeakingSection>
-          <SpeakingSection title="Podcasts">
+          </ServicesSection>
+          <ServicesSection title="Podcasts">
             <Appearance
               href="#"
               title="Using design as a competitive advantage"
@@ -78,7 +78,7 @@ export default function Speaking() {
               event="How They Work Radio, September 2021"
               cta="Listen to podcast"
             />
-          </SpeakingSection>
+          </ServicesSection>
         </div>
       </SimpleLayout>
     </>
