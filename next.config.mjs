@@ -33,6 +33,26 @@ const nextConfig = {
         destination: '/articles/what-makes-for-a-memorable-oar-design',
         permanent: true,
       },
+      {
+        source: '/blog/2018/11/9/train-ticket-machine-ux-part-2',
+        destination: '/articles/east-croydon-where-are-thou',
+        permanent: true,
+      },
+      {
+        source: '/blog/2018/10/9/visidata',
+        destination: '/articles/a-command-line-spreadsheet',
+        permanent: true,
+      },
+      {
+        source: '/blog/2018/5/3/how-do-you-stack-up',
+        destination: '/articles/how-do-you-stack-up',
+        permanent: true,
+      },
+      {
+        source: '/blog/2018/3/18/visualising-distributions',
+        destination: '/articles/visualising-distributions',
+        permanent: true,
+      },
     ]
   },
 }
