@@ -54,18 +54,42 @@ const nextConfig = {
         permanent: true,
       },
       {
-        source: '/blog/2018/2/6/update-womens-eights-head-of-the-river-race-winning-times',
-        destination: '/articles/update-womens-eights-head-of-the-river-race-winning-times',
+        source:
+          '/blog/2018/2/6/update-womens-eights-head-of-the-river-race-winning-times',
+        destination:
+          '/articles/update-womens-eights-head-of-the-river-race-winning-times',
         permanent: true,
       },
       {
         source: '/blog/2018/1/25/wehorr-winning-times',
-        destination: '/articles/womens-eights-head-of-the-river-race-winning-times',
+        destination:
+          '/articles/womens-eights-head-of-the-river-race-winning-times',
         permanent: true,
       },
       {
         source: '/blog/2018/1/20/leaflet-d3',
         destination: '/articles/leaflet-d3',
+        permanent: true,
+      },
+      {
+        source: '/blog/2018/1/16/ticket-machines-and-ux',
+        destination:
+          '/articles/never-attribute-to-malice-what-can-be-explained-by-incompetence',
+        permanent: true,
+      },
+      {
+        source: '/blog/2017/11/1/reusable-charts-2',
+        destination: '/articles/reusable-charts-and-extensible-frameworks',
+        permanent: true,
+      },
+      {
+        source: '/blog/2017/10/10/readme-driven-development',
+        destination: 'articles/readme-driven-development',
+        permanent: true,
+      },
+      {
+        source: '/blog/2017/5/25/reusable-charts',
+        destination: '/articles/reusable-charts',
         permanent: true,
       },
     ]
