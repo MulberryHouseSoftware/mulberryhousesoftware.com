@@ -64,7 +64,7 @@ const nextConfig = {
         permanent: true,
       },
       {
-        source: 'https://www.mulberryhousesoftware.com/blog/2018/1/20/leaflet-d3',
+        source: '/blog/2018/1/20/leaflet-d3',
         destination: '/articles/leaflet-d3',
         permanent: true,
       },
