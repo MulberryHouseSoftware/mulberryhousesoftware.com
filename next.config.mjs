@@ -53,6 +53,21 @@ const nextConfig = {
         destination: '/articles/visualising-distributions',
         permanent: true,
       },
+      {
+        source: '/blog/2018/2/6/update-womens-eights-head-of-the-river-race-winning-times',
+        destination: '/articles/update-womens-eights-head-of-the-river-race-winning-times',
+        permanent: true,
+      },
+      {
+        source: '/blog/2018/1/25/wehorr-winning-times',
+        destination: '/articles/womens-eights-head-of-the-river-race-winning-times',
+        permanent: true,
+      },
+      {
+        source: 'https://www.mulberryhousesoftware.com/blog/2018/1/20/leaflet-d3',
+        destination: '/articles/leaflet-d3',
+        permanent: true,
+      },
     ]
   },
 }
