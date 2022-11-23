@@ -1,3 +1,4 @@
+import { EnvelopeIcon, PhoneIcon } from '@heroicons/react/24/outline'
 import {
   GitHubIcon,
   InstagramIcon,
@@ -31,6 +32,94 @@ import logoStarbucks from '@/images/logos/starbucks.svg'
 import logoStatamic from '@/images/logos/statamic.svg'
 import logoStrata from '@/images/logos/strata.svg'
 import logoVega from '@/images/logos/vega.svg'
+import squirrell from '@/images/squirrell.jpeg'
+
+function Testimonials() {
+  return (
+    <section className="overflow-hidden bg-white py-12 dark:bg-zinc-900 md:py-20 lg:py-24">
+      <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <svg
+          className="absolute top-full right-full translate-x-1/3 -translate-y-1/4 transform lg:translate-x-1/2 xl:-translate-y-1/2"
+          width={404}
+          height={404}
+          fill="none"
+          viewBox="0 0 404 404"
+          role="img"
+          aria-labelledby="svg-workcation"
+        >
+          <title id="svg-workcation">Financial Canvas</title>
+          <defs>
+            <pattern
+              id="ad119f34-7694-4c31-947f-5c9d249b21f3"
+              x={0}
+              y={0}
+              width={20}
+              height={20}
+              patternUnits="userSpaceOnUse"
+            >
+              <rect
+                x={0}
+                y={0}
+                width={4}
+                height={4}
+                className="text-gray-200 dark:text-gray-800"
+                fill="currentColor"
+              />
+            </pattern>
+          </defs>
+          <rect
+            width={404}
+            height={404}
+            fill="url(#ad119f34-7694-4c31-947f-5c9d249b21f3)"
+          />
+        </svg>
+
+        <div className="relative">
+          <blockquote className="mt-10">
+            <div className="mx-auto max-w-3xl text-center text-2xl font-medium leading-9 text-zinc-600 dark:text-zinc-400">
+              <p>
+                &ldquo;The great thing about Mulberry House Software is their
+                focus on the end user and the problems they’re trying to solve.
+                Don’t tell them you need such and such a chart, tell them what
+                the story is and what you wish to communicate - the results are
+                much better. Mulberry House Software has been instrumental in
+                bringing our clients’ data to life.&rdquo;
+              </p>
+            </div>
+            <footer className="mt-8">
+              <div className="md:flex md:items-center md:justify-center">
+                <div className="md:flex-shrink-0">
+                  <Image
+                    className="mx-auto h-10 w-10 rounded-full"
+                    src={squirrell}
+                    alt=""
+                  />
+                </div>
+                <div className="mt-3 text-center md:mt-0 md:ml-4 md:flex md:items-center">
+                  <div className="text-base font-medium text-zinc-600 dark:text-zinc-400">
+                    Chris Squirrell
+                  </div>
+
+                  <svg
+                    className="mx-1 hidden h-5 w-5 text-zinc-600 dark:text-zinc-400 md:block"
+                    fill="currentColor"
+                    viewBox="0 0 20 20"
+                  >
+                    <path d="M11 0h3L9 20H6l5-20z" />
+                  </svg>
+
+                  <div className="text-base font-medium text-zinc-600 dark:text-zinc-400">
+                    Founder at Financial Canvas
+                  </div>
+                </div>
+              </div>
+            </footer>
+          </blockquote>
+        </div>
+      </div>
+    </section>
+  )
+}
 
 function MailIcon(props) {
   return (
@@ -50,42 +139,6 @@ function MailIcon(props) {
       <path
         d="m4 6 6.024 5.479a2.915 2.915 0 0 0 3.952 0L20 6"
         className="stroke-zinc-400 dark:stroke-zinc-500"
-      />
-    </svg>
-  )
-}
-
-function BriefcaseIcon(props) {
-  return (
-    <svg
-      viewBox="0 0 24 24"
-      fill="none"
-      strokeWidth="1.5"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-      aria-hidden="true"
-      {...props}
-    >
-      <path
-        d="M2.75 9.75a3 3 0 0 1 3-3h12.5a3 3 0 0 1 3 3v8.5a3 3 0 0 1-3 3H5.75a3 3 0 0 1-3-3v-8.5Z"
-        className="fill-zinc-100 stroke-zinc-400 dark:fill-zinc-100/10 dark:stroke-zinc-500"
-      />
-      <path
-        d="M3 14.25h6.249c.484 0 .952-.002 1.316.319l.777.682a.996.996 0 0 0 1.316 0l.777-.682c.364-.32.832-.319 1.316-.319H21M8.75 6.5V4.75a2 2 0 0 1 2-2h2.5a2 2 0 0 1 2 2V6.5"
-        className="stroke-zinc-400 dark:stroke-zinc-500"
-      />
-    </svg>
-  )
-}
-
-function ArrowDownIcon(props) {
-  return (
-    <svg viewBox="0 0 16 16" fill="none" aria-hidden="true" {...props}>
-      <path
-        d="M4.75 8.75 8 12.25m0 0 3.25-3.5M8 12.25v-8.5"
-        strokeWidth="1.5"
-        strokeLinecap="round"
-        strokeLinejoin="round"
       />
     </svg>
   )
@@ -117,12 +170,13 @@ function SocialLink({ icon: Icon, ...props }) {
 function Newsletter() {
   const handleSubmit = async (event) => {
     event.preventDefault()
-    const response = await fetch('/api/sendgrid', {
+
+    await fetch('/api/sendgrid', {
       body: JSON.stringify({
-        email: 'john@walley.org.uk',
-        fullname: 'John Walley',
-        subject: 'Test',
-        message: 'Thanks for getting in touch',
+        email: event.target['email'].value,
+        fullname: event.target['full-name'].value,
+        subject: 'Contact from Mulberry House Software website',
+        message: event.target['message'].value,
       }),
       headers: {
         'Content-Type': 'application/json',
@@ -138,107 +192,47 @@ function Newsletter() {
     >
       <h2 className="flex text-sm font-semibold text-zinc-900 dark:text-zinc-100">
         <MailIcon className="h-6 w-6 flex-none" />
-        <span className="ml-3">Stay up to date</span>
+        <span className="ml-3">Get in touch</span>
       </h2>
       <p className="mt-2 text-sm text-zinc-600 dark:text-zinc-400">
-        Get notified when I publish something new, and unsubscribe at any time.
+        Let us know about a project you&apos;ve got in mind.
       </p>
-      <div className="mt-6 flex">
+      <div className="mt-6 flex flex-col">
+        <input
+          type="text"
+          name="full-name"
+          id="full-name"
+          placeholder="Full name"
+          aria-label="Full name"
+          autoComplete="name"
+          required
+          className="mb-4 min-w-0 flex-auto appearance-none rounded-md border border-zinc-900/10 bg-white px-3 py-[calc(theme(spacing.2)-1px)] shadow-md shadow-zinc-800/5 placeholder:text-zinc-400 focus:border-teal-500 focus:outline-none focus:ring-4 focus:ring-teal-500/10 dark:border-zinc-700 dark:bg-zinc-700/[0.15] dark:text-zinc-200 dark:placeholder:text-zinc-500 dark:focus:border-teal-400 dark:focus:ring-teal-400/10 sm:text-sm"
+        />
         <input
           type="email"
+          id="email"
+          name="email"
           placeholder="Email address"
           aria-label="Email address"
+          autoComplete="email"
           required
-          className="min-w-0 flex-auto appearance-none rounded-md border border-zinc-900/10 bg-white px-3 py-[calc(theme(spacing.2)-1px)] shadow-md shadow-zinc-800/5 placeholder:text-zinc-400 focus:border-teal-500 focus:outline-none focus:ring-4 focus:ring-teal-500/10 dark:border-zinc-700 dark:bg-zinc-700/[0.15] dark:text-zinc-200 dark:placeholder:text-zinc-500 dark:focus:border-teal-400 dark:focus:ring-teal-400/10 sm:text-sm"
+          className="mb-4 min-w-0 flex-auto appearance-none rounded-md border border-zinc-900/10 bg-white px-3 py-[calc(theme(spacing.2)-1px)] shadow-md shadow-zinc-800/5 placeholder:text-zinc-400 focus:border-teal-500 focus:outline-none focus:ring-4 focus:ring-teal-500/10 dark:border-zinc-700 dark:bg-zinc-700/[0.15] dark:text-zinc-200 dark:placeholder:text-zinc-500 dark:focus:border-teal-400 dark:focus:ring-teal-400/10 sm:text-sm"
         />
-        <Button type="submit" className="ml-4 flex-none">
-          Join
+        <textarea
+          id="message"
+          name="message"
+          rows={4}
+          placeholder="Message"
+          aria-label="Message"
+          required
+          defaultValue={''}
+          className="mb-4 min-w-0 flex-auto appearance-none rounded-md border border-zinc-900/10 bg-white px-3 py-[calc(theme(spacing.2)-1px)] shadow-md shadow-zinc-800/5 placeholder:text-zinc-400 focus:border-teal-500 focus:outline-none focus:ring-4 focus:ring-teal-500/10 dark:border-zinc-700 dark:bg-zinc-700/[0.15] dark:text-zinc-200 dark:placeholder:text-zinc-500 dark:focus:border-teal-400 dark:focus:ring-teal-400/10 sm:text-sm"
+        />
+        <Button type="submit" className="flex-none">
+          Submit
         </Button>
       </div>
     </form>
-  )
-}
-
-function Resume() {
-  let resume = [
-    {
-      company: 'Planetaria',
-      title: 'CEO',
-      logo: logoPlanetaria,
-      start: '2019',
-      end: {
-        label: 'Present',
-        dateTime: new Date().getFullYear(),
-      },
-    },
-    {
-      company: 'Airbnb',
-      title: 'Product Designer',
-      logo: logoAirbnb,
-      start: '2014',
-      end: '2019',
-    },
-    {
-      company: 'Facebook',
-      title: 'iOS Software Engineer',
-      logo: logoFacebook,
-      start: '2011',
-      end: '2014',
-    },
-    {
-      company: 'Starbucks',
-      title: 'Shift Supervisor',
-      logo: logoStarbucks,
-      start: '2008',
-      end: '2011',
-    },
-  ]
-
-  return (
-    <div className="rounded-2xl border border-zinc-100 p-6 dark:border-zinc-700/40">
-      <h2 className="flex text-sm font-semibold text-zinc-900 dark:text-zinc-100">
-        <BriefcaseIcon className="h-6 w-6 flex-none" />
-        <span className="ml-3">Work</span>
-      </h2>
-      <ol className="mt-6 space-y-4">
-        {resume.map((role, roleIndex) => (
-          <li key={roleIndex} className="flex gap-4">
-            <div className="relative mt-1 flex h-10 w-10 flex-none items-center justify-center rounded-full shadow-md shadow-zinc-800/5 ring-1 ring-zinc-900/5 dark:border dark:border-zinc-700/50 dark:bg-zinc-800 dark:ring-0">
-              <Image src={role.logo} alt="" className="h-7 w-7" unoptimized />
-            </div>
-            <dl className="flex flex-auto flex-wrap gap-x-2">
-              <dt className="sr-only">Company</dt>
-              <dd className="w-full flex-none text-sm font-medium text-zinc-900 dark:text-zinc-100">
-                {role.company}
-              </dd>
-              <dt className="sr-only">Role</dt>
-              <dd className="text-xs text-zinc-500 dark:text-zinc-400">
-                {role.title}
-              </dd>
-              <dt className="sr-only">Date</dt>
-              <dd
-                className="ml-auto text-xs text-zinc-400 dark:text-zinc-500"
-                aria-label={`${role.start.label ?? role.start} until ${
-                  role.end.label ?? role.end
-                }`}
-              >
-                <time dateTime={role.start.dateTime ?? role.start}>
-                  {role.start.label ?? role.start}
-                </time>{' '}
-                <span aria-hidden="true">—</span>{' '}
-                <time dateTime={role.end.dateTime ?? role.end}>
-                  {role.end.label ?? role.end}
-                </time>
-              </dd>
-            </dl>
-          </li>
-        ))}
-      </ol>
-      <Button href="#" variant="secondary" className="group mt-6 w-full">
-        Download CV
-        <ArrowDownIcon className="h-4 w-4 stroke-zinc-400 transition group-active:stroke-zinc-600 dark:group-hover:stroke-zinc-50 dark:group-active:stroke-zinc-50" />
-      </Button>
-    </div>
   )
 }
 
@@ -317,7 +311,7 @@ export default function Home({ articles }) {
         </div>
       </Container>
       <Photos />
-      <Container className="pt-20 pb-16 text-center lg:pt-32">
+      <Container className="pt-16 pb-8 text-center lg:pt-24">
         <div>
           <p className="font-display text-base text-zinc-600 dark:text-zinc-400">
             Trusted by
@@ -364,6 +358,7 @@ export default function Home({ articles }) {
                           src={company.logo}
                           alt={company.name}
                           unoptimized
+                          className="brightness-200 grayscale filter dark:brightness-150"
                         />
                       </a>
                     </li>
@@ -374,7 +369,10 @@ export default function Home({ articles }) {
           </ul>
         </div>
       </Container>
-      <Container className="mt-24 md:mt-28">
+      <Container>
+        <Testimonials />
+      </Container>
+      <Container className="mt-12 md:mt-16">
         <div className="mx-auto grid max-w-xl grid-cols-1 gap-y-20 lg:max-w-none lg:grid-cols-2">
           <div className="flex flex-col gap-16">
             {articles.map((article) => (
@@ -383,7 +381,6 @@ export default function Home({ articles }) {
           </div>
           <div className="space-y-10 lg:pl-16 xl:pl-24">
             <Newsletter />
-            <Resume />
           </div>
         </div>
       </Container>
