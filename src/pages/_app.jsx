@@ -1,10 +1,11 @@
+import '@/styles/tailwind.css'
+import 'focus-visible'
+
 import { useEffect, useRef } from 'react'
 
 import { Footer } from '@/components/Footer'
 import { Header } from '@/components/Header'
-
-import '@/styles/tailwind.css'
-import 'focus-visible'
+import Script from 'next/script'
 
 function usePrevious(value) {
   let ref = useRef()
@@ -21,6 +22,19 @@ export default function App({ Component, pageProps, router }) {
 
   return (
     <>
+      <Script
+        src="https://www.googletagmanager.com/gtag/js?id=G-2EBNBFE55S"
+        strategy="afterInteractive"
+      />
+      <Script id="google-analytics" strategy="afterInteractive">
+        {`
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+
+gtag('config', 'G-2EBNBFE55S');
+        `}
+      </Script>
       <div className="fixed inset-0 flex justify-center sm:px-8">
         <div className="flex w-full max-w-7xl lg:px-8">
           <div className="w-full bg-white ring-1 ring-zinc-100 dark:bg-zinc-900 dark:ring-zinc-300/20" />
