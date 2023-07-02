@@ -33,6 +33,7 @@ import logoStatamic from '@/images/logos/statamic.svg'
 import logoStrata from '@/images/logos/strata.svg'
 import logoVega from '@/images/logos/vega.svg'
 import squirrell from '@/images/squirrell.jpeg'
+import { useRouter } from 'next/router'
 
 function Testimonials() {
   return (
@@ -168,6 +169,8 @@ function SocialLink({ icon: Icon, ...props }) {
 }
 
 function Newsletter() {
+  const router = useRouter()
+
   const handleSubmit = async (event) => {
     event.preventDefault()
 
@@ -183,6 +186,8 @@ function Newsletter() {
       },
       method: 'POST',
     })
+
+    router.push('/thank-you')
   }
 
   return (
