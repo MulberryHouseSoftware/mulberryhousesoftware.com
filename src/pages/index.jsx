@@ -21,12 +21,14 @@ import image2 from '@/images/photos/image-2.png'
 import image3 from '@/images/photos/image-3.gif'
 import image4 from '@/images/photos/image-4.png'
 import image5 from '@/images/photos/image-5.png'
+import image6 from '@/images/photos/image-6.gif'
 import logoAirbnb from '@/images/logos/airbnb.svg'
 import logoFacebook from '@/images/logos/facebook.svg'
 import logoFinancialCanvas from '@/images/logos/financial-canvas.svg'
 import logoLaravel from '@/images/logos/laravel.svg'
 import logoMirage from '@/images/logos/mirage.svg'
 import logoNolojy from '@/images/logos/nolojy.svg'
+import logoPeopleMake from '@/images/logos/people-make.svg'
 import logoPlanetaria from '@/images/logos/planetaria.svg'
 import logoStarbucks from '@/images/logos/starbucks.svg'
 import logoStatamic from '@/images/logos/statamic.svg'
@@ -242,27 +244,36 @@ function Newsletter() {
 }
 
 function Photos() {
-  let rotations = ['rotate-2', '-rotate-2', 'rotate-2', 'rotate-2', '-rotate-2']
+  let rotations = [
+    'rotate-2',
+    '-rotate-2',
+    'rotate-2',
+    'rotate-2',
+    '-rotate-2',
+    'rotate-2',
+  ]
 
   return (
     <div className="mt-16 sm:mt-20">
       <div className="-my-4 flex justify-center gap-5 overflow-hidden py-4 sm:gap-8">
-        {[image1, image2, image3, image4, image5].map((image, imageIndex) => (
-          <div
-            key={image.src}
-            className={clsx(
-              'relative aspect-[9/10] w-44 flex-none overflow-hidden rounded-xl bg-zinc-100 dark:bg-zinc-800 sm:w-72 sm:rounded-2xl',
-              rotations[imageIndex % rotations.length]
-            )}
-          >
-            <Image
-              src={image}
-              alt=""
-              sizes="(min-width: 640px) 18rem, 11rem"
-              className="absolute inset-0 h-full w-full object-cover"
-            />
-          </div>
-        ))}
+        {[image1, image2, image3, image6, image4, image5].map(
+          (image, imageIndex) => (
+            <div
+              key={image.src}
+              className={clsx(
+                'relative aspect-[9/10] w-44 flex-none overflow-hidden rounded-xl bg-zinc-100 dark:bg-zinc-800 sm:w-72 sm:rounded-2xl',
+                rotations[imageIndex % rotations.length]
+              )}
+            >
+              <Image
+                src={image}
+                alt=""
+                sizes="(min-width: 640px) 18rem, 11rem"
+                className="absolute inset-0 h-full w-full object-cover"
+              />
+            </div>
+          )
+        )}
       </div>
     </div>
   )
@@ -344,6 +355,11 @@ export default function Home({ articles }) {
                 },
               ],
               [
+                {
+                  name: 'People Make',
+                  logo: logoPeopleMake,
+                  href: 'https://peoplemake.io/',
+                },
                 {
                   name: 'Nolojy',
                   logo: logoNolojy,

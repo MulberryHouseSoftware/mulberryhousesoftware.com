@@ -11,20 +11,27 @@ import logoPlanetaria from '@/images/logos/planetaria.svg'
 
 const projects = [
   {
+    name: 'Reno Bathroom Floor Planner',
+    description: 'Simple floor planning on your phone.',
+    link: { href: 'https://reno-app.co.uk', label: 'reno-app.co.uk' },
+    logo: logoOpenShuttle,
+  },
+  {
     name: 'Pennant',
     description:
       'A React component library for visualising historical and streaming financial market data. Used by Vega,a protocol for creating and trading margined financial products on a fully decentralised network.',
     link: { href: 'https://pennant.vega.xyz/', label: 'pennant.vega.xyz' },
-    logo: logoPlanetaria,
+    logo: logoOpenShuttle,
   },
   {
     name: 'Financial Canvas',
-    description: 'Enables CIOs, financial controllers and pension fund trustees to filter and explore the latest versions of a financial model in their browsers.',
+    description:
+      'Enables CIOs, financial controllers and pension fund trustees to filter and explore the latest versions of a financial model in their browsers.',
     link: {
       href: 'https://www.financialcanvas.co.uk/',
       label: 'financialcanvas.co.uk',
     },
-    logo: logoAnimaginary,
+    logo: logoOpenShuttle,
   },
   {
     name: 'Changing Places International',
@@ -34,13 +41,13 @@ const projects = [
       href: 'https://app.changingplacesinternational.org/',
       label: 'app.changingplacesinternational.org',
     },
-    logo: logoHelioStream,
+    logo: logoOpenShuttle,
   },
   {
     name: 'CancerPDX',
     description: 'Visualise cancer history in a family tree.',
     link: { href: 'https://cancerpdx.com/', label: 'cancerpdx.com' },
-    logo: logoCosmos,
+    logo: logoOpenShuttle,
   },
   {
     name: 'Nolojy',
@@ -70,8 +77,7 @@ const projects = [
   },
   {
     name: 'Cambridge Pub Map',
-    description:
-      "Cambridge pubs in the style of the London Underground map.",
+    description: 'Cambridge pubs in the style of the London Underground map.',
     link: {
       href: 'https://www.pubmap.co.uk/',
       label: 'pubmap.co.uk',
