@@ -3,23 +3,20 @@ import Head from 'next/head'
 
 import { Card } from '@/components/Card'
 import { SimpleLayout } from '@/components/SimpleLayout'
-import logoAnimaginary from '@/images/logos/animaginary.svg'
-import logoCosmos from '@/images/logos/cosmos.svg'
-import logoHelioStream from '@/images/logos/helio-stream.svg'
 import logoOpenShuttle from '@/images/logos/open-shuttle.svg'
-import logoPlanetaria from '@/images/logos/planetaria.svg'
+import logoReno from '@/images/logos/reno.svg'
 
 const projects = [
   {
-    name: 'Reno Bathroom Floor Planner',
-    description: 'Simple floor planning on your phone.',
-    link: { href: 'https://reno-app.co.uk', label: 'reno-app.co.uk' },
-    logo: logoOpenShuttle,
+    name: 'Reno',
+    description: 'Easy bathroom planning. Draw your dream and nail the practical details that save your budget and your time.',
+    link: { href: 'https://www.renovatewithreno.co.uk', label: 'www.renovatewithreno.co.uk' },
+    logo: logoReno,
   },
   {
     name: 'Pennant',
     description:
-      'A React component library for visualising historical and streaming financial market data. Used by Vega,a protocol for creating and trading margined financial products on a fully decentralised network.',
+      'A React component library for visualising historical and streaming financial market data. Used by Vega, a protocol for creating and trading margined financial products on a fully decentralised network.',
     link: { href: 'https://pennant.vega.xyz/', label: 'pennant.vega.xyz' },
     logo: logoOpenShuttle,
   },
@@ -109,7 +106,7 @@ export default function Projects() {
       </Head>
       <SimpleLayout
         title="Things we’ve made trying to put my dent in the universe."
-        intro="We’ve worked on many projects over the years but these are the ones that we’m most proud of."
+        intro="We’ve worked on many projects over the years but these are the ones that we’re most proud of."
       >
         <ul
           role="list"
