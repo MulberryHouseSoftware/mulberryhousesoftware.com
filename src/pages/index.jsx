@@ -298,7 +298,7 @@ export default function Home({ articles }) {
             Create data-driven interactive stories.
           </h1>
           <p className="mt-6 text-base text-zinc-600 dark:text-zinc-400">
-            Mulberry House Software can help you turn data in to{' '}
+            Mulberry House Software can help you turn data into{' '}
             <strong>interactive visualisations</strong>,{' '}
             <strong>infographics</strong> and <strong>reports</strong>.
           </p>
