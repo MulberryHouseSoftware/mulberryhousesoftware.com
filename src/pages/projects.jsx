@@ -5,13 +5,27 @@ import { Card } from '@/components/Card'
 import { SimpleLayout } from '@/components/SimpleLayout'
 import logoOpenShuttle from '@/images/logos/open-shuttle.svg'
 import logoReno from '@/images/logos/reno.svg'
+import logoAllotment from '@/images/logos/allotment.svg'
 
 const projects = [
   {
     name: 'Reno',
-    description: 'Easy bathroom planning. Draw your dream and nail the practical details that save your budget and your time.',
-    link: { href: 'https://www.renovatewithreno.co.uk', label: 'www.renovatewithreno.co.uk' },
+    description:
+      'Easy bathroom planning. Draw your dream and nail the practical details that save your budget and your time.',
+    link: {
+      href: 'https://www.renovatewithreno.co.uk',
+      label: 'www.renovatewithreno.co.uk',
+    },
     logo: logoReno,
+  },
+  {
+    name: 'Allotment',
+    description: 'React split-pane component.',
+    link: {
+      href: 'https://allotment.mulberryhousesoftware.com/',
+      label: 'Allotment',
+    },
+    logo: logoAllotment,
   },
   {
     name: 'Pennant',
