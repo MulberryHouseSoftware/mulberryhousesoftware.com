@@ -20,7 +20,7 @@ const projects = [
   },
   {
     name: 'Allotment',
-    description: 'React split-pane component.',
+    description: 'React split-pane component. Over 50,000 weekly downloads.',
     link: {
       href: 'https://allotment.mulberryhousesoftware.com/',
       label: 'Allotment',

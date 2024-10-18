@@ -29,11 +29,13 @@ import logoLaravel from '@/images/logos/laravel.svg'
 import logoMirage from '@/images/logos/mirage.svg'
 import logoNolojy from '@/images/logos/nolojy.svg'
 import logoPeopleMake from '@/images/logos/people-make.svg'
+import logoReno from '@/images/logos/reno.svg'
 import logoPlanetaria from '@/images/logos/planetaria.svg'
 import logoStarbucks from '@/images/logos/starbucks.svg'
 import logoStatamic from '@/images/logos/statamic.svg'
 import logoStrata from '@/images/logos/strata.svg'
 import logoVega from '@/images/logos/vega.svg'
+import penny from '@/images/penny.png'
 import squirrell from '@/images/squirrell.jpeg'
 import { useRouter } from 'next/router'
 
@@ -42,7 +44,109 @@ function Testimonials() {
     <section className="overflow-hidden bg-white py-12 dark:bg-zinc-900 md:py-20 lg:py-24">
       <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <svg
-          className="absolute top-full right-full translate-x-1/3 -translate-y-1/4 transform lg:translate-x-1/2 xl:-translate-y-1/2"
+          className="absolute right-full top-full -translate-y-1/4 translate-x-1/3 transform lg:translate-x-1/2 xl:-translate-y-1/2"
+          width={404}
+          height={404}
+          fill="none"
+          viewBox="0 0 404 404"
+          role="img"
+          aria-labelledby="svg-workcation"
+        >
+          <title id="svg-workcation">Reno</title>
+          <defs>
+            <pattern
+              id="ad119f34-7694-4c31-947f-5c9d249b21f3"
+              x={0}
+              y={0}
+              width={20}
+              height={20}
+              patternUnits="userSpaceOnUse"
+            >
+              <rect
+                x={0}
+                y={0}
+                width={4}
+                height={4}
+                className="text-gray-200 dark:text-gray-800"
+                fill="currentColor"
+              />
+            </pattern>
+          </defs>
+          <rect
+            width={404}
+            height={404}
+            fill="url(#ad119f34-7694-4c31-947f-5c9d249b21f3)"
+          />
+        </svg>
+
+        <div className="relative">
+          <blockquote className="mt-10">
+            <div className="mx-auto max-w-3xl text-center text-2xl font-medium leading-9 text-zinc-600 dark:text-zinc-400">
+              <p>
+                &ldquo;John has been an integral part of our team at Reno for
+                the past year and a half, during this time, he has single
+                handedly developed our floor planner app, a vital feature of our
+                product. The floor planner allows users to effortlessly create
+                to-scale floor plans and automatically generate wall elevation
+                views - cross device, mobile first.
+                <br />
+                <br />
+                John's expertise in data visualization and his ability to tackle
+                the complex mathematical challenges of the app’s geospatial
+                features have been instrumental in moving the project forward.
+                <br />
+                <br />
+                Beyond his technical prowess, John has been a great fit for us
+                due to his flexibility and collaborative nature. As a start up
+                developing on a shoe string, he worked closely with us to
+                establish a working pattern and commercial model that met
+                everyone’s needs. His communicative nature and transparent
+                approach have made the development process smooth, as he
+                regularly shares his work in progress, allowing us to shape the
+                technical implementation and user experience together
+                effectively.
+                <br />
+                <br />
+                John brings immense value through his independent
+                problem-solving and his openness to feedback, which has helped
+                ensure the success of our project.&rdquo;
+              </p>
+            </div>
+            <footer className="mt-8">
+              <div className="md:flex md:items-center md:justify-center">
+                <div className="md:flex-shrink-0">
+                  <Image
+                    className="mx-auto h-10 w-10 rounded-full"
+                    src={penny}
+                    alt=""
+                  />
+                </div>
+                <div className="mt-3 text-center md:ml-4 md:mt-0 md:flex md:items-center">
+                  <div className="text-base font-medium text-zinc-600 dark:text-zinc-400">
+                    Penny Andrews
+                  </div>
+
+                  <svg
+                    className="mx-1 hidden h-5 w-5 text-zinc-600 dark:text-zinc-400 md:block"
+                    fill="currentColor"
+                    viewBox="0 0 20 20"
+                  >
+                    <path d="M11 0h3L9 20H6l5-20z" />
+                  </svg>
+
+                  <div className="text-base font-medium text-zinc-600 dark:text-zinc-400">
+                    Co-founder, CEO at{' '}
+                    <a href="https://www.renovatewithreno.co.uk/">Reno</a>
+                  </div>
+                </div>
+              </div>
+            </footer>
+          </blockquote>
+        </div>
+      </div>
+      <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <svg
+          className="absolute right-full top-full -translate-y-1/4 translate-x-1/3 transform lg:translate-x-1/2 xl:-translate-y-1/2"
           width={404}
           height={404}
           fill="none"
@@ -98,7 +202,7 @@ function Testimonials() {
                     alt=""
                   />
                 </div>
-                <div className="mt-3 text-center md:mt-0 md:ml-4 md:flex md:items-center">
+                <div className="mt-3 text-center md:ml-4 md:mt-0 md:flex md:items-center">
                   <div className="text-base font-medium text-zinc-600 dark:text-zinc-400">
                     Chris Squirrell
                   </div>
@@ -112,7 +216,10 @@ function Testimonials() {
                   </svg>
 
                   <div className="text-base font-medium text-zinc-600 dark:text-zinc-400">
-                    Founder at Financial Canvas
+                    Founder at{' '}
+                    <a href="https://www.financialcanvas.co.uk/">
+                      Financial Canvas
+                    </a>
                   </div>
                 </div>
               </div>
@@ -327,7 +434,7 @@ export default function Home({ articles }) {
         </div>
       </Container>
       <Photos />
-      <Container className="pt-16 pb-8 text-center lg:pt-24">
+      <Container className="pb-8 pt-16 text-center lg:pt-24">
         <div>
           <p className="font-display text-base text-zinc-600 dark:text-zinc-400">
             Trusted by
@@ -339,6 +446,11 @@ export default function Home({ articles }) {
             {[
               [
                 {
+                  name: 'Reno',
+                  logo: logoReno,
+                  href: 'https://www.renovatewithreno.co.uk/',
+                },
+                {
                   name: 'Financial Canvas',
                   logo: logoFinancialCanvas,
                   href: 'https://www.financialcanvas.co.uk/',
@@ -348,17 +460,12 @@ export default function Home({ articles }) {
                   logo: logoVega,
                   href: 'https://vega.xyz/',
                 },
+              ],
+              [
                 {
                   name: 'Strata',
                   logo: logoStrata,
                   href: 'https://www.stratasecurity.co.uk/',
-                },
-              ],
-              [
-                {
-                  name: 'People Make',
-                  logo: logoPeopleMake,
-                  href: 'https://peoplemake.io/',
                 },
                 {
                   name: 'Nolojy',
