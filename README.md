@@ -1,38 +1,29 @@
-# Mulberry House Software
+# Mulberry House Software (archive)
 
-Mulberry House Software is a [Tailwind UI](https://tailwindui.com) site built using [Tailwind CSS](https://tailwindcss.com) and [Next.js](https://nextjs.org).
+Mulberry House Software was a data visualisation and software development studio based in Cambridge, UK, which traded from 2017 to 2025. It is no longer operating.
 
-## Getting started
+This repository holds the company website, kept online at [mulberryhousesoftware.com](https://www.mulberryhousesoftware.com) as a historical archive of its projects, infographics and articles. John Walley can now be found at [walley.org.uk](https://www.walley.org.uk).
 
-To get started with this website, first install the npm dependencies:
+## How it works
+
+The site is built with [Next.js](https://nextjs.org), [Tailwind CSS](https://tailwindcss.com) and [MDX](https://mdxjs.com), and is exported as plain static HTML (`output: 'export'` in `next.config.mjs`). There is no server-side code.
+
+It is hosted on [Vercel](https://vercel.com). Legacy `/blog/...` URLs from the original site are redirected to their `/articles/...` equivalents in `vercel.json`.
+
+## Running locally
 
 ```bash
 npm install
-```
-
-Next, create a `.env.local` file in the root of your project and set the `NEXT_PUBLIC_SITE_URL` variable to your site's public URL:
-
-```
-NEXT_PUBLIC_SITE_URL=https://example.com
-```
-
-Next, run the development server:
-
-```bash
+cp .env.example .env.local
 npm run dev
 ```
 
-Finally, open [http://localhost:3000](http://localhost:3000) in your browser to view the website.
+Then open [http://localhost:3000](http://localhost:3000).
 
-## Customizing
+## Building
 
-You can start editing this website by modifying the files in the `/src` folder. The site will auto-update as you edit these files.
+```bash
+npm run build
+```
 
-## Learn more
-
-To learn more about the technologies used in this site template, see the following resources:
-
-- [Tailwind CSS](https://tailwindcss.com/docs) - the official Tailwind CSS documentation
-- [Next.js](https://nextjs.org/docs) - the official Next.js documentation
-- [Headless UI](https://headlessui.dev) - the official Headless UI documentation
-- [MDX](https://mdxjs.com) - the MDX documentation
+This writes the static site, including the RSS feed at `rss/feed.xml`, to `out/`.

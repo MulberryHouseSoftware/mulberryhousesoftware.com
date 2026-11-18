@@ -44,7 +44,7 @@ export default function About() {
         <title>About - Mulberry House Software</title>
         <meta
           name="description"
-          content="I’m Spencer Sharp. I live in New York City, where I design the future."
+          content="Mulberry House Software was a data visualisation and software development studio based in Cambridge, UK, from 2017 to 2025."
         />
       </Head>
       <Container className="mt-16 sm:mt-32">
@@ -61,11 +61,11 @@ export default function About() {
           </div>
           <div className="lg:order-first lg:row-span-2">
             <h1 className="text-4xl font-bold tracking-tight text-zinc-800 dark:text-zinc-100 sm:text-5xl">
-              We’re Mulberry House Software. We’re based in Cambridge, UK. We provide data visualisation and software development products and services.
+              We were Mulberry House Software. We were based in Cambridge, UK, and provided data visualisation and software development products and services from 2017 to 2025.
             </h1>
             <div className="mt-6 space-y-7 text-base text-zinc-600 dark:text-zinc-400">
               <p>
-                We can take on projects ranging from bespoke interactive web-based visualisations to providing advice on architecting frontend and backends software systems.
+                We took on projects ranging from bespoke interactive web-based visualisations to providing advice on architecting frontend and backend software systems.
               </p>
              
             </div>
@@ -85,7 +85,7 @@ export default function About() {
                 Follow on LinkedIn
               </SocialLink>
               <SocialLink
-                href="mailto:spencer@planetaria.tech"
+                href="mailto:john.walley@mulberryhousesoftware.com"
                 icon={MailIcon}
                 className="mt-8 border-t border-zinc-100 pt-8 dark:border-zinc-700/40"
               >
