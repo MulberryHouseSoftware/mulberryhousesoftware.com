@@ -40,7 +40,7 @@ export default function ArticlesIndex({ articles }) {
         <title>Articles - Mulberry House Software</title>
         <meta
           name="description"
-          content="All of my long-form thoughts on programming, leadership, product design, and more, collected in chronological order."
+          content="Writing on data visualisation, software design and company building from Mulberry House Software, collected in chronological order."
         />
       </Head>
       <SimpleLayout

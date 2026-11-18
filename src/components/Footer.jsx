@@ -26,7 +26,7 @@ export function Footer() {
                 <NavLink href="/team">Team</NavLink>
               </div>
               <p className="text-sm text-zinc-400 dark:text-zinc-500">
-                &copy; {new Date().getFullYear()} Mulberry House Software. All rights
+                &copy; 2017&ndash;2025 Mulberry House Software. All rights
                 reserved.
               </p>
             </div>

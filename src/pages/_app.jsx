@@ -3,6 +3,7 @@ import 'focus-visible'
 
 import { useEffect, useRef } from 'react'
 
+import { ArchiveBanner } from '@/components/ArchiveBanner'
 import { Footer } from '@/components/Footer'
 import { Header } from '@/components/Header'
 import Script from 'next/script'
@@ -41,6 +42,7 @@ gtag('config', 'G-2EBNBFE55S');
         </div>
       </div>
       <div className="relative">
+        <ArchiveBanner />
         <Header />
         <main>
           <Component previousPathname={previousPathname} {...pageProps} />

@@ -1,4 +1,8 @@
-import { EnvelopeIcon, PhoneIcon } from '@heroicons/react/24/outline'
+import {
+  EnvelopeIcon,
+  GlobeAltIcon,
+  PhoneIcon,
+} from '@heroicons/react/24/outline'
 import {
   GitHubIcon,
   InstagramIcon,
@@ -6,6 +10,7 @@ import {
   TwitterIcon,
 } from '@/components/SocialIcons'
 
+import { PERSONAL_SITE_URL } from '@/components/ArchiveBanner'
 import { Button } from '@/components/Button'
 import { Card } from '@/components/Card'
 import { Container } from '@/components/Container'
@@ -37,7 +42,6 @@ import logoStrata from '@/images/logos/strata.svg'
 import logoVega from '@/images/logos/vega.svg'
 import penny from '@/images/penny.png'
 import squirrell from '@/images/squirrell.jpeg'
-import { useRouter } from 'next/router'
 
 function Testimonials() {
   return (
@@ -231,29 +235,6 @@ function Testimonials() {
   )
 }
 
-function MailIcon(props) {
-  return (
-    <svg
-      viewBox="0 0 24 24"
-      fill="none"
-      strokeWidth="1.5"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-      aria-hidden="true"
-      {...props}
-    >
-      <path
-        d="M2.75 7.75a3 3 0 0 1 3-3h12.5a3 3 0 0 1 3 3v8.5a3 3 0 0 1-3 3H5.75a3 3 0 0 1-3-3v-8.5Z"
-        className="fill-zinc-100 stroke-zinc-400 dark:fill-zinc-100/10 dark:stroke-zinc-500"
-      />
-      <path
-        d="m4 6 6.024 5.479a2.915 2.915 0 0 0 3.952 0L20 6"
-        className="stroke-zinc-400 dark:stroke-zinc-500"
-      />
-    </svg>
-  )
-}
-
 function Article({ article }) {
   return (
     <Card as="article">
@@ -277,76 +258,25 @@ function SocialLink({ icon: Icon, ...props }) {
   )
 }
 
-function Newsletter() {
-  const router = useRouter()
-
-  const handleSubmit = async (event) => {
-    event.preventDefault()
-
-    await fetch('/api/sendgrid', {
-      body: JSON.stringify({
-        email: event.target['email'].value,
-        fullname: event.target['full-name'].value,
-        subject: 'Contact from Mulberry House Software website',
-        message: event.target['message'].value,
-      }),
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      method: 'POST',
-    })
-
-    router.push('/thank-you')
-  }
-
+function NowCard() {
   return (
-    <form
-      onSubmit={handleSubmit}
-      className="rounded-2xl border border-zinc-100 p-6 dark:border-zinc-700/40"
-    >
+    <div className="rounded-2xl border border-zinc-100 p-6 dark:border-zinc-700/40">
       <h2 className="flex text-sm font-semibold text-zinc-900 dark:text-zinc-100">
-        <MailIcon className="h-6 w-6 flex-none" />
-        <span className="ml-3">Get in touch</span>
+        <GlobeAltIcon className="h-6 w-6 flex-none stroke-zinc-400 dark:stroke-zinc-500" />
+        <span className="ml-3">Where to find John now</span>
       </h2>
       <p className="mt-2 text-sm text-zinc-600 dark:text-zinc-400">
-        Let us know about a project you&apos;ve got in mind.
+        Mulberry House Software is no longer taking on work. You can find out
+        what John Walley is up to these days on his personal website.
       </p>
-      <div className="mt-6 flex flex-col">
-        <input
-          type="text"
-          name="full-name"
-          id="full-name"
-          placeholder="Full name"
-          aria-label="Full name"
-          autoComplete="name"
-          required
-          className="mb-4 min-w-0 flex-auto appearance-none rounded-md border border-zinc-900/10 bg-white px-3 py-[calc(theme(spacing.2)-1px)] shadow-md shadow-zinc-800/5 placeholder:text-zinc-400 focus:border-teal-500 focus:outline-none focus:ring-4 focus:ring-teal-500/10 dark:border-zinc-700 dark:bg-zinc-700/[0.15] dark:text-zinc-200 dark:placeholder:text-zinc-500 dark:focus:border-teal-400 dark:focus:ring-teal-400/10 sm:text-sm"
-        />
-        <input
-          type="email"
-          id="email"
-          name="email"
-          placeholder="Email address"
-          aria-label="Email address"
-          autoComplete="email"
-          required
-          className="mb-4 min-w-0 flex-auto appearance-none rounded-md border border-zinc-900/10 bg-white px-3 py-[calc(theme(spacing.2)-1px)] shadow-md shadow-zinc-800/5 placeholder:text-zinc-400 focus:border-teal-500 focus:outline-none focus:ring-4 focus:ring-teal-500/10 dark:border-zinc-700 dark:bg-zinc-700/[0.15] dark:text-zinc-200 dark:placeholder:text-zinc-500 dark:focus:border-teal-400 dark:focus:ring-teal-400/10 sm:text-sm"
-        />
-        <textarea
-          id="message"
-          name="message"
-          rows={4}
-          placeholder="Message"
-          aria-label="Message"
-          required
-          defaultValue={''}
-          className="mb-4 min-w-0 flex-auto appearance-none rounded-md border border-zinc-900/10 bg-white px-3 py-[calc(theme(spacing.2)-1px)] shadow-md shadow-zinc-800/5 placeholder:text-zinc-400 focus:border-teal-500 focus:outline-none focus:ring-4 focus:ring-teal-500/10 dark:border-zinc-700 dark:bg-zinc-700/[0.15] dark:text-zinc-200 dark:placeholder:text-zinc-500 dark:focus:border-teal-400 dark:focus:ring-teal-400/10 sm:text-sm"
-        />
-        <Button type="submit" className="flex-none">
-          Submit
-        </Button>
-      </div>
-    </form>
+      <Button
+        href={PERSONAL_SITE_URL}
+        variant="secondary"
+        className="mt-6 w-full"
+      >
+        Visit walley.org.uk
+      </Button>
+    </div>
   )
 }
 
@@ -391,23 +321,34 @@ export default function Home({ articles }) {
     <>
       <Head>
         <title>
-          Mulberry House Software - Software designer, founder, and amateur
-          astronaut
+          Mulberry House Software - Data visualisation studio, 2017–2025
         </title>
         <meta
           name="description"
-          content="I’m Spencer, a software designer and entrepreneur based in New York City. I’m the founder and CEO of Planetaria, where we develop technologies that empower regular people to explore space on their own terms."
+          content="Mulberry House Software was a data visualisation studio based in Cambridge, UK, from 2017 to 2025. This site is kept as an archive of its work and writing."
         />
       </Head>
       <Container className="mt-9">
         <div className="max-w-2xl">
           <h1 className="text-4xl font-bold tracking-tight text-zinc-800 dark:text-zinc-100 sm:text-5xl">
-            Create data-driven interactive stories.
+            We created data-driven interactive stories.
           </h1>
           <p className="mt-6 text-base text-zinc-600 dark:text-zinc-400">
-            Mulberry House Software can help you turn data into{' '}
-            <strong>interactive visualisations</strong>,{' '}
-            <strong>infographics</strong> and <strong>reports</strong>.
+            From 2017 to 2025, Mulberry House Software helped clients turn data
+            into <strong>interactive visualisations</strong>,{' '}
+            <strong>infographics</strong> and <strong>reports</strong>. The
+            company is no longer trading, and this site is kept as an archive of
+            its work and writing.
+          </p>
+          <p className="mt-4 text-base text-zinc-600 dark:text-zinc-400">
+            You can find John Walley at{' '}
+            <a
+              href={PERSONAL_SITE_URL}
+              className="font-medium text-teal-600 hover:text-teal-500 dark:text-teal-400 dark:hover:text-teal-300"
+            >
+              walley.org.uk
+            </a>
+            .
           </p>
           <div className="mt-6 flex gap-6">
             <SocialLink
@@ -437,7 +378,7 @@ export default function Home({ articles }) {
       <Container className="pb-8 pt-16 text-center lg:pt-24">
         <div>
           <p className="font-display text-base text-zinc-600 dark:text-zinc-400">
-            Trusted by
+            Past clients
           </p>
           <ul
             role="list"
@@ -508,7 +449,7 @@ export default function Home({ articles }) {
             ))}
           </div>
           <div className="space-y-10 lg:pl-16 xl:pl-24">
-            <Newsletter />
+            <NowCard />
           </div>
         </div>
       </Container>

@@ -115,7 +115,7 @@ export default function Projects() {
         <title>Projects - Mulberry House Software</title>
         <meta
           name="description"
-          content="Things we’ve made trying to put my dent in the universe."
+          content="Projects Mulberry House Software worked on between 2017 and 2025."
         />
       </Head>
       <SimpleLayout
