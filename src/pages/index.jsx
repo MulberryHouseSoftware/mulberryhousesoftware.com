@@ -18,9 +18,6 @@ import Head from 'next/head'
 import Image from 'next/image'
 import Link from 'next/link'
 import clsx from 'clsx'
-import { formatDate } from '@/lib/formatDate'
-import { generateRssFeed } from '@/lib/generateRssFeed'
-import { getAllArticles } from '@/lib/getAllArticles'
 import image1 from '@/images/photos/image-1.gif'
 import image2 from '@/images/photos/image-2.png'
 import image3 from '@/images/photos/image-3.gif'
@@ -235,17 +232,16 @@ function Testimonials() {
   )
 }
 
-function Article({ article }) {
+function Writing() {
   return (
     <Card as="article">
-      <Card.Title href={`/articles/${article.slug}`}>
-        {article.title}
-      </Card.Title>
-      <Card.Eyebrow as="time" dateTime={article.date} decorate>
-        {formatDate(article.date)}
-      </Card.Eyebrow>
-      <Card.Description>{article.description}</Card.Description>
-      <Card.Cta>Read article</Card.Cta>
+      <Card.Title href={`${PERSONAL_SITE_URL}/articles`}>Articles</Card.Title>
+      <Card.Description>
+        The articles written here between 2017 and 2024, on data
+        visualisation, front-end development and user experience, now live on
+        John&apos;s personal website.
+      </Card.Description>
+      <Card.Cta>Read the articles</Card.Cta>
     </Card>
   )
 }
@@ -316,7 +312,7 @@ function Photos() {
   )
 }
 
-export default function Home({ articles }) {
+export default function Home() {
   return (
     <>
       <Head>
@@ -325,7 +321,7 @@ export default function Home({ articles }) {
         </title>
         <meta
           name="description"
-          content="Mulberry House Software was a data visualisation studio based in Cambridge, UK, from 2017 to 2025. This site is kept as an archive of its work and writing."
+          content="Mulberry House Software was a data visualisation studio based in Cambridge, UK, from 2017 to 2025. This site is kept as an archive of its work."
         />
       </Head>
       <Container className="mt-9">
@@ -338,10 +334,10 @@ export default function Home({ articles }) {
             into <strong>interactive visualisations</strong>,{' '}
             <strong>infographics</strong> and <strong>reports</strong>. The
             company is no longer trading, and this site is kept as an archive of
-            its work and writing.
+            its work.
           </p>
           <p className="mt-4 text-base text-zinc-600 dark:text-zinc-400">
-            You can find John Walley at{' '}
+            You can find John Walley, and the articles from this site, at{' '}
             <a
               href={PERSONAL_SITE_URL}
               className="font-medium text-teal-600 hover:text-teal-500 dark:text-teal-400 dark:hover:text-teal-300"
@@ -444,9 +440,7 @@ export default function Home({ articles }) {
       <Container className="mt-12 md:mt-16">
         <div className="mx-auto grid max-w-xl grid-cols-1 gap-y-20 lg:max-w-none lg:grid-cols-2">
           <div className="flex flex-col gap-16">
-            {articles.map((article) => (
-              <Article key={article.slug} article={article} />
-            ))}
+            <Writing />
           </div>
           <div className="space-y-10 lg:pl-16 xl:pl-24">
             <NowCard />
@@ -455,18 +449,4 @@ export default function Home({ articles }) {
       </Container>
     </>
   )
-}
-
-export async function getStaticProps() {
-  if (process.env.NODE_ENV === 'production') {
-    await generateRssFeed()
-  }
-
-  return {
-    props: {
-      articles: (await getAllArticles())
-        .slice(0, 4)
-        .map(({ component, ...meta }) => meta),
-    },
-  }
 }
